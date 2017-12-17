@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d3E-3G-jcw">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreLocationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Map Kit View Controller-->
+        <scene sceneID="hMR-DV-RMr">
+            <objects>
+                <viewController id="d3E-3G-jcw" customClass="MapKitViewController" customModule="CoreLocationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vxn-dU-Zau"/>
+                        <viewControllerLayoutGuide type="bottom" id="gvI-QH-Z1F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FmF-ZM-PCd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vF7-2i-q7d"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PYX-Np-bZX">
+                                <items>
+                                    <barButtonItem title="-" id="85S-aj-Hud">
+                                        <connections>
+                                            <action selector="zoomOut:" destination="d3E-3G-jcw" id="gsv-AJ-ElY"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="+" id="0oQ-Oj-yZk">
+                                        <connections>
+                                            <action selector="zoomIn:" destination="d3E-3G-jcw" id="cdg-CL-F0N"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uhc-S5-Rxv"/>
+                                    <barButtonItem title="O" id="67k-Ht-Z8T">
+                                        <connections>
+                                            <action selector="currentLocation:" destination="d3E-3G-jcw" id="KFS-TW-aO2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vF7-2i-q7d" firstAttribute="top" secondItem="vxn-dU-Zau" secondAttribute="bottom" constant="8" id="8hH-sV-3uQ"/>
+                            <constraint firstAttribute="trailing" secondItem="PYX-Np-bZX" secondAttribute="trailing" id="BWK-Gi-1Qg"/>
+                            <constraint firstItem="PYX-Np-bZX" firstAttribute="top" secondItem="vF7-2i-q7d" secondAttribute="bottom" id="H3w-yO-PIa"/>
+                            <constraint firstItem="vF7-2i-q7d" firstAttribute="leading" secondItem="FmF-ZM-PCd" secondAttribute="leading" id="Jlq-zz-Frs"/>
+                            <constraint firstAttribute="trailing" secondItem="vF7-2i-q7d" secondAttribute="trailing" id="Jvf-W6-bbb"/>
+                            <constraint firstItem="gvI-QH-Z1F" firstAttribute="top" secondItem="PYX-Np-bZX" secondAttribute="bottom" id="Ygf-tH-Eec"/>
+                            <constraint firstItem="PYX-Np-bZX" firstAttribute="leading" secondItem="FmF-ZM-PCd" secondAttribute="leading" id="fAE-Uc-Pql"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myMapView" destination="vF7-2i-q7d" id="clg-kI-8JG"/>
+                        <segue destination="O59-CA-IYX" kind="presentation" identifier="titlesSegue" id="dgK-JC-Pkc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p11-jD-auN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1024.8" y="124.58770614692655"/>
+        </scene>
+        <!--Titles View Controller-->
+        <scene sceneID="96S-XT-mpE">
+            <objects>
+                <viewController id="O59-CA-IYX" customClass="TitlesViewController" customModule="CoreLocationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W8v-0k-WLJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="uGH-yn-3Mj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LZP-wM-7YF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Annotation Title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WOw-SK-640">
+                                <frame key="frameInset" minX="16" minY="28" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Annotation SubTitle" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zwp-RP-Wsa">
+                                <frame key="frameInset" minX="16" minY="66" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2d1-Dy-QeD">
+                                <frame key="frameInset" minX="82" minY="104" width="210" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Set Annotation"/>
+                                <connections>
+                                    <action selector="setAnnotation:" destination="O59-CA-IYX" eventType="touchUpInside" id="ck7-a8-gXW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="subtitleTextField" destination="Zwp-RP-Wsa" id="wO1-4q-gJc"/>
+                        <outlet property="titleTextField" destination="WOw-SK-640" id="r6p-6Q-fte"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zAF-cq-eCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1872.8" y="124.58770614692655"/>
+        </scene>
+    </scenes>
+</document>
